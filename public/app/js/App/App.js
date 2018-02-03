@@ -7,7 +7,9 @@ class App extends React.Component {
         const tags = [{name: "rock", url: "andRoll", id: 1}];
         const comments = [
             {username: "test", content: "asdasdasdasd asd sad sad sad sa dsa d", id: 1},
-            {username: "Dan test", content: "asdasdasdasd asd sad sad sad sa dsa df sdfsd gfds gsd grwe tretgerg erg erg erfg ref wfde sdafg dsg tr efd sdaf sdg dsfgf", id: 2}
+            {username: "Dan test", content: "asdasdasdasd asd sad sad sad sa dsa df sdfsd gfds gsd grwe tretgerg erg erg erfg ref wfde sdafg dsg tr efd sdaf sdg dsfgf", id: 2},
+            {username: "Dan test", content: "asdasdasdasd asd sad sad sad sa dsa df sdfsd gfds gsd grwe tretgerg erg erg erfg ref wfde sdafg dsg tr efd sdaf sdg dsfgf", id: 3},
+            {username: "Dan test", content: "asdasdasdasd asd sad sad sad sa dsa df sdfsd gfds gsd grwe tretgerg erg erg erfg ref wfde sdafg dsg tr efd sdaf sdg dsfgf", id: 4}
         ];
 
         return (

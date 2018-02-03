@@ -7,13 +7,14 @@ class Comments extends React.Component {
         const comments = this.props.comments !== undefined ? this.props.comments.map((comment) => 
                 <Comment key={comment.id} username={comment.username} comment={comment.content} />
             ) : "No comments currently"
-
-
+            
         return (
-            <div className="card bg-light mb-3" style={{height: "97%", marginLeft: "-1.7rem", background:"#e6eaf2", marginRight: "0.3rem", marginTop: "0.3rem", color: '#515356'}}>
+            <div style={{marginLeft: "-1.7rem", marginRight: "0.3rem", marginTop: "0.3rem"}}>
                 <div className="card-header">Comments</div>
-                <div className="card-body">
-                    {comments}
+                <div className="card thin scrollbar-primary bg-light mb-3" style={{color: '#515356', overflowY: "scroll"}}>
+                    <div className="card-body">
+                        {comments}
+                    </div>
                 </div>
             </div>
         );

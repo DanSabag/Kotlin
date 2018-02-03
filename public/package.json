@@ -5,7 +5,7 @@
   "main": "bundle.js",
   "scripts": {
     "dev": "webpack -d --watch",
-    "build" : "webpack -p"
+    "build": "webpack -p"
   },
   "author": "Dan Sabag",
   "license": "ISC",
@@ -17,8 +17,12 @@
     "bootstrap": "^4.0.0",
     "css-loader": "^0.28.9",
     "jquery": "^3.3.1",
+    "mdbootstrap": "^4.4.4",
+    "node-waves": "^0.7.6",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "style-loader": "^0.20.1"
+    "style-loader": "^0.20.1",
+    "webpack": "^3.10.0"
   }
 }

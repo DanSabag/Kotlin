@@ -1,4 +1,5 @@
-var path = require('path')
+const path = require('path')
+const webpack = require("webpack")
 
 var BUILD_DIR = path.resolve(__dirname, 'build');
 var APP_DIR = path.resolve(__dirname, 'app');
@@ -29,7 +30,16 @@ var config = {
   stats: {
     colors: true
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  "plugins": [
+		new webpack.ProvidePlugin({
+			'$': 'jquery',
+      'jQuery': 'jquery',
+      'window.jQuery': 'jquery',
+      'Popper': 'popper.js',
+      'Waves': 'node-waves'
+		})
+	]
 };
 
 module.exports = config;

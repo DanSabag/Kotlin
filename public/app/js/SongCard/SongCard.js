@@ -24,7 +24,7 @@ class SongCard extends React.Component {
                             <Song />
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 ">
                         <Comments comments={this.props.comments}/>
                     </div>
                 </div>
