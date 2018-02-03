@@ -1,24 +1,35 @@
 var path = require('path')
 
-module.exports = {
+var BUILD_DIR = path.resolve(__dirname, 'build');
+var APP_DIR = path.resolve(__dirname, 'app');
+
+var config = {
   entry: {
-    app: './js/app.js'
+    app: path.resolve(APP_DIR, 'js/index.js')
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'app.bundle.js'
+    path: BUILD_DIR,
+    filename: 'bundle.js'
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader", query: {presets: ['es2015', 'react']}}
+      { 
+        test: /\.js$/, 
+        exclude: /node_modules/, 
+        include: APP_DIR,
+        loader: "babel-loader", 
+        query: {presets: ['es2015', 'react']}},
+      {
+        test: /\.css$/,
+        include: APP_DIR,
+        use: ['style-loader', 'css-loader']
+      }
     ]
   },
   stats: {
     colors: true
   },
-  devtool: 'source-map',
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
-  },
+  devtool: 'source-map'
 };
+
+module.exports = config;
