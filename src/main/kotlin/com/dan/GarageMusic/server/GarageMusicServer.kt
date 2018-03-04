@@ -8,10 +8,10 @@ fun main(args: Array<String>) {
 
 fun startServer(portNumber: Int) {
     port(portNumber)
-    setRoutes()
+    setRoutes()2
 }
 
 fun setRoutes() {
-    staticFiles.externalLocation("public")
+    staticFiles.externalLocation("public/app")
     get("/") {req ,res -> "/public/index.html"}
 }

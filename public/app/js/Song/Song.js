@@ -6,12 +6,8 @@ class Song extends React.Component {
             // <div className="embed-responsive embed-responsive-16by9" style={{marginRight: '1rem'}}>
             //     <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/LhLBN0nRREg?rel=0" allowfullscreen></iframe>
             // </div>
-            <div className="embed-responsive embed-responsive-16by9" style={{marginRight: '1rem'}}>
-                <video controls>
-                    <source src="movie.mp4" type="video/mp4" />
-                    <source src="movie.ogg" type="video/ogg" />
-                    Your browser does not support the video tag.
-                </video>
+            <div className="embed-responsive embed-responsive-16by9" style={{marginRight: '1rem', marginLeft: '1rem'}}>
+                <img src="images/song.png" />
             </div>
         );
     }

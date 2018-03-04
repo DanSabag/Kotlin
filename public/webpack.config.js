@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require("webpack")
 
-var BUILD_DIR = path.resolve(__dirname, 'build');
+var BUILD_DIR = path.resolve(__dirname, 'app/build');
 var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
@@ -19,11 +19,22 @@ var config = {
         exclude: /node_modules/, 
         include: APP_DIR,
         loader: "babel-loader", 
-        query: {presets: ['es2015', 'react']}},
+        query: {
+          presets: ['es2015', 'react'], 
+          cacheDirectory: true,
+          plugins: [
+            ["import", [{ "libraryName": "antd", "style": true }]],
+          ]
+        }
+      },
       {
         test: /\.css$/,
         include: APP_DIR,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'less-loader']
       }
     ]
   },
@@ -31,15 +42,19 @@ var config = {
     colors: true
   },
   devtool: 'source-map',
-  "plugins": [
+  plugins: [
 		new webpack.ProvidePlugin({
 			'$': 'jquery',
       'jQuery': 'jquery',
       'window.jQuery': 'jquery',
       'Popper': 'popper.js',
-      'Waves': 'node-waves'
-		})
-	]
+      'Waves': 'node-waves',
+      'React': 'react'
+    })
+  ],
+  resolve: {
+    extensions: ['.js', '.json', '.less']
+  }
 };
 
 module.exports = config;
